@@ -2,12 +2,12 @@
 import React from 'react'
 import "../styles/Juegos.css";
 import { useState } from 'react';
-import callOfDutyImg from '../../img/Call of duty GOLD WAR.png';
-import crashImg from '../../img/Crash.jpeg';
-import ufcImg from '../../img/UFC 5.jpg';
-import granTurismoImg from '../../img/Gran Turismo.jpg'; 
-import unchartedImg from '../../img/Uncharted.jpg';
-import godOfWarImg from '../../img/God of war.jpg';
+import callOfDutyImg from '../../../img/Call of duty GOLD WAR.png';
+import crashImg from '../../../img/Crash.jpeg';
+import ufcImg from '../../../img/UFC 5.jpg';
+import granTurismoImg from '../../../img/Gran turismo.avif'; 
+import unchartedImg from '../../../img/Uncharted.jpg';
+import godOfWarImg from '../../../img/God of war.jpg'; 
 
 
 export const Juegos = () => {
@@ -19,7 +19,7 @@ export const Juegos = () => {
         {id: 4, nombre: 'Gran Turismo', genero: 'Carreras', imagen: granTurismoImg},
         {id: 5, nombre:'Uncharted', genero: 'Historia', imagen: unchartedImg},
         {id: 6, nombre:'God of War', genero: 'Historia', imagen: godOfWarImg},
-    ];
+    ]; 
   return (
     <div className='container-principal'>
         <div className="container-filter-juegos">
