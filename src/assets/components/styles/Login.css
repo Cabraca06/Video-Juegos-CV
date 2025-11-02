@@ -1,0 +1,21 @@
+.section-login{
+    width: 1425px ;
+    height: 600px;
+    
+}
+
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 91vh;
+   background-image: url(../../../img//fon2.jpg)
+  }
+
+.form-login{
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 150px;
+    text-align: center;
+}
