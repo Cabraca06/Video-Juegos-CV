@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react";
 import "../styles/About.css";
 
@@ -22,14 +22,7 @@ export const About = () => {
            </div>
         </section>
 
-
-=======
-export const About = () => {
-    return(
-        <div>
-            <h1>About Page</h1>
-        </div>
->>>>>>> 2296af00a5a44782c786d13e82ec2fb8c9969001
     )
 }
-export default About;
+
+

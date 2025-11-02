@@ -18,11 +18,10 @@ nav .title {
     text-decoration: none;
     color: rgb(17, 17, 17);
     padding: 10px;
-<<<<<<< HEAD
+
     background-color: #4CAF50;
-=======
+
     background-color: #ecae32;
->>>>>>> 2296af00a5a44782c786d13e82ec2fb8c9969001
     border-radius: 10px;
 }
 nav .title:hover{
@@ -51,11 +50,8 @@ nav ul li a {
 }
 
 nav ul li a:not(.active):hover {
-<<<<<<< HEAD
     background-color:#4CAF50;
-=======
     background-color:#ecae32;
->>>>>>> 2296af00a5a44782c786d13e82ec2fb8c9969001
 }
 
 nav .menu {

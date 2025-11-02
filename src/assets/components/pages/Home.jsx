@@ -1,12 +1,15 @@
 import React from "react";
 import "../styles/home.css";
 import "../styles/Footer.css";
+
+
 export const Home = () => {
+ 
   return (
     <div>
       <main className="fondo">
         <section className="Home1">
-          <div alt="Logo de Video Juegos CV" className="logoHome">
+          <div title="Logo de Video Juegos CV" className="logoHome">
             <h1 className="textFondo">Bienvenido a Video Juegos CV</h1>
           </div>
           <p className="textPrincipal">
@@ -22,7 +25,7 @@ export const Home = () => {
           <h2 className="textFondo">Juegos Destacados</h2>
           <div className="juegosDestacados">
             <div className="juego">
-              <img src="/src/img/Call of duty GOLD WAR.png" alt="Juego 1" />
+              <div className="call" alt="Juego 1" />
               <h3>Call of duty Cold War</h3>
               <a
                 className="botonVer"
@@ -34,7 +37,7 @@ export const Home = () => {
               </a>
             </div>
             <div className="juego">
-              <img src="/src/img/Uncharted.jpg" alt="Juego 2" />
+              <div className="unch" alt="Juego 2" />
               <h3>Uncharted</h3>
               <a
                 className="botonVer"
@@ -46,7 +49,7 @@ export const Home = () => {
               </a>
             </div>
             <div className="juego">
-              <img src="/src/img/UFC 5.jpg" alt="Juego 3" />
+              <div className="ufc" alt="Juego 3" />
               <h3>UFC 5</h3>
               <a
                 className="botonVer"
@@ -58,7 +61,7 @@ export const Home = () => {
               </a>
             </div>
             <div className="juego">
-              <img src="/src/img/Crash.jpeg" alt="Juego 4" />
+              <div className="crash" alt="Juego 4" />
               <h3>Crash Rumble</h3>
               <a
                 className="botonVer"
@@ -92,7 +95,7 @@ export const Home = () => {
           </div>
         </section>
 
-        <section className="Footer">
+        <footer className="Footer">
           <p className="Footer">
           <p className="textFooter">
             Únete a nuestra comunidad de jugadores y mantente al día con todo lo
@@ -101,7 +104,7 @@ export const Home = () => {
           </p>
             © 2025 Video Juegos CV. Todos los derechos reservados.
           </p>
-        </section>
+        </footer>
       </main>
     </div>
   );

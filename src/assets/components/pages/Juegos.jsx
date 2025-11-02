@@ -1,18 +1,24 @@
-<<<<<<< HEAD
+
 import React from 'react'
 import "../styles/Juegos.css";
 import { useState } from 'react';
+import callOfDutyImg from '../../img/Call of duty GOLD WAR.png';
+import crashImg from '../../img/Crash.jpeg';
+import ufcImg from '../../img/UFC 5.jpg';
+import granTurismoImg from '../../img/Gran Turismo.jpg'; 
+import unchartedImg from '../../img/Uncharted.jpg';
+import godOfWarImg from '../../img/God of war.jpg';
 
 
 export const Juegos = () => {
     const [filter, setJuegos] = useState([]);
-        const juegos = [
-        {id: 1, nombre: 'Call of Duty', genero: 'Guerra', imagen: '/img/Call of duty GOLD WAR.png'},
-        {id: 2, nombre: 'Crash Bandicoot', genero: 'Aventura', imagen: '/img/Crash.jpeg'},
-        {id: 3, nombre: 'UFC', genero: 'Peleas', imagen: '/src/img/Call of duty GOLD WAR.png'},
-        {id: 4, nombre: 'Gran Turismo', genero: 'Carreras', imagen: '/src/img/Call of duty GOLD WAR.png'},
-        {id: 5, nombre:'Uncharted', genero: 'Historia', imagen: '/src/img/Uncharted.jpg'},
-        {id: 6, nombre:'God of War', genero: 'Historia', imagen: '/src/img/God of war.jpg'},
+    const juegos = [
+        {id: 1, nombre: 'Call of Duty', genero: 'Guerra', imagen: callOfDutyImg},
+        {id: 2, nombre: 'Crash Bandicoot', genero: 'Aventura', imagen: crashImg},
+        {id: 3, nombre: 'UFC', genero: 'Peleas', imagen: ufcImg},
+        {id: 4, nombre: 'Gran Turismo', genero: 'Carreras', imagen: granTurismoImg},
+        {id: 5, nombre:'Uncharted', genero: 'Historia', imagen: unchartedImg},
+        {id: 6, nombre:'God of War', genero: 'Historia', imagen: godOfWarImg},
     ];
   return (
     <div className='container-principal'>
@@ -37,18 +43,3 @@ export const Juegos = () => {
      </div>
   )
 }
-
-export default Juegos
-
-
-=======
- function Juegos() {
-    return (
-        <div>
-            <h1>Juegos Page</h1>
-            <p>Welcome to the Juegos page!</p>
-        </div>
-    );
-}
-    export default Juegos;
->>>>>>> 2296af00a5a44782c786d13e82ec2fb8c9969001

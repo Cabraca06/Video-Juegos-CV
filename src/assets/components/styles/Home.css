@@ -127,3 +127,33 @@
     margin-top: 20px;
     
 }
+
+/*Juegos destacados*/
+.call{
+    background-image: url(/src/img/Call\ of\ duty\ GOLD\ WAR.png);
+    width: 250px;
+    height: 210px;
+    margin-bottom: 20px;
+    background-size: cover;
+}
+.unch{
+    background-image: url(/src/img/Uncharted.jpg);
+    width: 250px;
+    height: 210px;
+    margin-bottom: 20px;
+    background-size: cover;
+}
+.ufc{
+    background-image: url(/src/img/UFC\ 5.jpg);
+    width: 250px;
+    height: 210px;
+    margin-bottom: 20px;
+    background-size: cover;
+}
+.crash{
+    background-image: url(/src/img/Crash.jpeg);
+    width: 250px;
+    height: 210px;
+    margin-bottom: 20px;
+    background-size: cover;
+}
