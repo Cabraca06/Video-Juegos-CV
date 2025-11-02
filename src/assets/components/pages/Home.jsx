@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/home.css";
 import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 
 export const Home = () => {
@@ -27,50 +28,30 @@ export const Home = () => {
             <div className="juego">
               <div className="call" alt="Juego 1" />
               <h3>Call of duty Cold War</h3>
-              <a
-                className="botonVer"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ir al juego
-              </a>
+              <Link to="/juegos" className="botonVer">
+                Ir al juegos
+              </Link>
             </div>
             <div className="juego">
               <div className="unch" alt="Juego 2" />
               <h3>Uncharted</h3>
-              <a
-                className="botonVer"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ir al juego
-              </a>
+              <Link to="/juegos" className="botonVer">
+                Ir al juegos
+              </Link>
             </div>
             <div className="juego">
               <div className="ufc" alt="Juego 3" />
               <h3>UFC 5</h3>
-              <a
-                className="botonVer"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ir al juego
-              </a>
+              <Link to="/juegos" className="botonVer">
+                Ir al juegos
+              </Link>
             </div>
             <div className="juego">
               <div className="crash" alt="Juego 4" />
               <h3>Crash Rumble</h3>
-              <a
-                className="botonVer"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ir al juego
-              </a>
+              <Link to="/juegos" className="botonVer">
+                Ir al juegos
+              </Link>
             </div>
           </div>
         </section>
@@ -86,7 +67,9 @@ export const Home = () => {
                 de juegos  Noticias,  actualizaciones,  Guías, tutoriales y
                 Foros de discusió.
               <p className="ofrece-card-btn">
-                <a className="botonVer" href="">Ir al Juego</a>
+              <Link to="/juegos" className="botonVer">
+                Ir al juegos
+              </Link>
               </p>
 
               </p>

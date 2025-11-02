@@ -1,42 +1,48 @@
 
-import React from 'react'
+
+import React, { useState } from 'react';
 import "../styles/Juegos.css";
-import { useState } from 'react';
-import callOfDutyImg from '../../../img/Call of duty GOLD WAR.png';
-import crashImg from '../../../img/Crash.jpeg';
-import ufcImg from '../../../img/UFC 5.jpg';
-import granTurismoImg from '../../../img/Gran turismo.avif'; 
-import unchartedImg from '../../../img/Uncharted.jpg';
-import godOfWarImg from '../../../img/God of war.jpg'; 
-
-
+import { Link } from "react-router-dom";
+import { juegos } from '../../../data/juegosData';
 export const Juegos = () => {
-    const [filter, setJuegos] = useState([]);
-    const juegos = [
-        {id: 1, nombre: 'Call of Duty', genero: 'Guerra', imagen: callOfDutyImg},
-        {id: 2, nombre: 'Crash Bandicoot', genero: 'Aventura', imagen: crashImg},
-        {id: 3, nombre: 'UFC', genero: 'Peleas', imagen: ufcImg},
-        {id: 4, nombre: 'Gran Turismo', genero: 'Carreras', imagen: granTurismoImg},
-        {id: 5, nombre:'Uncharted', genero: 'Historia', imagen: unchartedImg},
-        {id: 6, nombre:'God of War', genero: 'Historia', imagen: godOfWarImg},
-    ]; 
+     // Estado para la categoría seleccionada
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
+    // Obtenemos una lista de géneros únicos y añadimos "Todos" al principio
+    const categorias = ['Todos', ...new Set(juegos.map(juego => juego.genero))];
+    // Filtramos los juegos basados en la categoría seleccionada
+    const juegosFiltrados = categoriaSeleccionada === 'Todos'
+    ? juegos
+    : juegos.filter(juego => juego.genero === categoriaSeleccionada);
+
+
   return (
     <div className='container-principal'>
         <div className="container-filter-juegos">
+            <h3>Categorias</h3>
+            <br />
             <ul>
-                <li>Guerra</li>
-                <li>Aventura</li>
-                <li>Peleas</li>
-                <li>Carreras</li>
-            </ul>        
+                {categorias.map(categoria => (
+                    <li
+                        key={categoria}
+                        onClick={() => setCategoriaSeleccionada(categoria)}
+                        className={categoriaSeleccionada === categoria ? 'active' : ''}
+                    >
+                        {categoria}
+                    </li>
+                ))}
+            </ul>
+            
         </div> 
     
     <div className='container-juegos'>
-    {juegos.map(juego => (
+    {juegosFiltrados.map(juego => (
             <div key={juego.id} className="juego-card">
                 <img src={juego.imagen} alt={juego.nombre} />
                 <h3>{juego.nombre}</h3>
                 <p>{juego.genero}</p>
+                <Link to={`/juegos/${juego.id}`} className="botonVer">
+                Ir al juego
+              </Link>
             </div>
         ))}  
         </div> 
