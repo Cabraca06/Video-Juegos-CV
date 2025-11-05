@@ -41,7 +41,7 @@ export const Consolas = () => {
               <img src={consola.imagen} alt={consola.nombre} />
               <h3>{consola.nombre}</h3>
               <p>{consola.fabricante}</p>
-              <Link to={`/consolas/${consola.id}`} className="botonVer">
+              <Link to={`/Consolas/${consola.id}`} className="botonVer">
               Ir a la Consola
             </Link>
           </div>
