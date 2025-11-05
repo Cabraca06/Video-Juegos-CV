@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/Video-Juegos-CV/',
   build: {
-    outDir: 'docs'
+    outDir: 'root'
   }
 })
