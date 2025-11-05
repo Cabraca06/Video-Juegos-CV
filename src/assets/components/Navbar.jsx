@@ -29,6 +29,9 @@ export const Navbar = () => {
           <NavLink to="/Juegos">JUEGOS</NavLink>
         </li>
         <li>
+          <NavLink to="/Consolas">CONSOLAS</NavLink>
+        </li>
+        <li>
           <NavLink to="/Contact">CONTACT</NavLink>
         </li>
         <li>

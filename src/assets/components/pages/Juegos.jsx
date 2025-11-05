@@ -14,6 +14,8 @@ export const Juegos = () => {
     ? juegos
     : juegos.filter(juego => juego.genero === categoriaSeleccionada);
 
+    
+
 
   return (
     <div className='container-principal'>

@@ -1,0 +1,84 @@
+/* Agrega esto a tu archivo Juegos.css */
+
+.container-principal-consolas {
+    display: flex;
+    width: 1200px;
+    height: 800px;
+    gap: 2rem;
+    padding: 2rem; 
+  }
+  
+  .container-filter-consolas {
+    flex: 0 0 200px; 
+    background: linear-gradient(45deg, #0a6ea0, #b8b9b6);
+    text-align: center;
+    box-shadow: #fafafa 10px 10px;
+    border-radius: 10px ;
+  }
+  .container-filter-consolas h3{
+    text-align: center;
+    text-shadow: 0px 2px rgb(128, 126, 126) ;
+    font-size: 25px;
+  }
+  .container-filter-consolas ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .container-filter-consolas li {
+    padding: 12px 20px;
+    background-color: #fffefe;
+    color: rgb(20, 20, 20);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: #1e1e1d 10px 10px 10px;
+  }
+
+    
+  .container-consolas {
+    flex: 1; 
+    height: 680px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 3.8rem; 
+  }
+  
+  .consola-card {
+    width: 300px;
+    height: 330px;
+    background-color: #2a2a2a;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+  .consola-card img{
+    width: 200px;
+    height: 200px;
+  }
+  .consola-card:hover {
+    transform: scale(1.05); 
+  }
+  
+  .consola-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .container-filter-consolas li {
+    cursor: pointer;
+  }
+  
+  .container-filter-consolas li.active {
+    /* Por ejemplo, para resaltar el filtro activo */
+    font-weight: bold;
+    color: #00aaff; /* O el color que prefieras */
+  }
+  

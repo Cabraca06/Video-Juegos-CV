@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import '../../styles/JuegoDetalle.css';
-// Crearemos este archivo de estilos
+
 
 
 // Crearemos este archivo de estilos
