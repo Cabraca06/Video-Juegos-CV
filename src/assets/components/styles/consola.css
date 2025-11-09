@@ -1,16 +1,18 @@
-/* Agrega esto a tu archivo Juegos.css */
+:root {
+  --bgColor-filter-consolas:linear-gradient(45deg, #0a6ea0, #b8b9b6)
+}
 
 .container-principal-consolas {
     display: flex;
-    width: 1200px;
-    height: 800px;
+    width: 1300px;
+    height: 1000px;
     gap: 2rem;
     padding: 2rem; 
   }
   
   .container-filter-consolas {
     flex: 0 0 200px; 
-    background: linear-gradient(45deg, #0a6ea0, #b8b9b6);
+    background: var(--bgColor-filter-consolas);
     text-align: center;
     box-shadow: #fafafa 10px 10px;
     border-radius: 10px ;
@@ -43,15 +45,22 @@
     
   .container-consolas {
     flex: 1; 
-    height: 680px;
+    height: 700px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 3.8rem; 
+    gap: 5.8rem; 
+  }
+  .consolas-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 9px 0;
+    padding: 0 1rem; 
   }
   
   .consola-card {
-    width: 300px;
-    height: 330px;
+    width: 340px;
+    height: 360px;
     background-color: #2a2a2a;
     color: white;
     padding: 1rem;
@@ -61,7 +70,7 @@
     transition: transform 0.2s ease-in-out;
   }
   .consola-card img{
-    width: 200px;
+    width: 250px;
     height: 200px;
   }
   .consola-card:hover {
@@ -77,8 +86,32 @@
   }
   
   .container-filter-consolas li.active {
-    /* Por ejemplo, para resaltar el filtro activo */
     font-weight: bold;
-    color: #00aaff; /* O el color que prefieras */
+    color: #00aaff; 
   }
   
+
+  /*estilo de botones en consolas*/
+  .consolas-card-botones {
+    display: block;
+    width: 310px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    
+  }
+  .botonCarrito {
+    background-color: var(--boton-compras-Bg-color);
+    border: none;
+    color: rgb(250, 247, 247);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 8px;
+  }

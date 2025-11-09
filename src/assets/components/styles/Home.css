@@ -17,7 +17,7 @@
 .textFondo{
     color: rgb(224, 217, 217);
     text-align: center;
-    padding-top: 50px;
+    padding-top: 40px;
     font-size: 50px;
     font-family: 'Arial', sans-serif;
     text-shadow: 2px 2px 4px #000000;
@@ -39,6 +39,7 @@
     margin-bottom: 50px;
 }
 .juego{
+    color: #e4e4e4;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -50,12 +51,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 10px;
-    background-color: #f5f5f5;
+    background-color:#2b2a2a;
 }
 .juego h3{
     margin: 30px 10px;;
     font-size: 24px;
-    color: #333;
+    color: #e4e4e4;
 }
 .juego img{
     width: 100%;
@@ -100,7 +101,7 @@
 }
 
 .OfreceJuego{
-    background-color: #f9f9f9d9;
+    background-color: #e5e5e5d9;
     padding: 40px 20px;
     text-align: center;
     border-top: 1px solid #e0e0e0;

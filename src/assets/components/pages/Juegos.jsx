@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import "../styles/Juegos.css";
 import { Link } from "react-router-dom";
 import { juegos } from '../../../Data/juegosData';
+import { useCart } from '../../components/pages/Compras/CartContext';
 export const Juegos = () => {
+    const { addToCart } = useCart(); // 2. Obtén la función para agregar al carrito
      // Estado para la categoría seleccionada
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
     // Obtenemos una lista de géneros únicos y añadimos "Todos" al principio
@@ -45,9 +47,16 @@ export const Juegos = () => {
                   <p>Genero: {juego.genero}</p>
                   <p>Inventario: {juego.inventario}</p>
                 </div>
-                <Link to={`/juegos/${juego.id}`} className="botonVer">
+                <p>Precio: ${juego.precio}</p>
+               <div className='juego-card-botones'>
+               <Link to={`/juegos/${juego.id}`} className="botonVer">
                 Ir al juego
               </Link>
+              <button onClick={() => addToCart(juego)} className="botonCarrito">
+                Agregar al carrito
+                  </button>
+               </div>
+               
             </div>
         ))}  
         </div> 

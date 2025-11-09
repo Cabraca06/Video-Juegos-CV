@@ -55,7 +55,7 @@ export const Home = () => {
             </div>
           </div>
         </section>
-
+        
         <section className="Ofrecemos">
           <h2 className="textFondo">¿Qué ofrecemos?</h2>
           <div className="OfreceJuego">

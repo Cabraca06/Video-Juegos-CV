@@ -1,8 +1,12 @@
 /* Agrega esto a tu archivo Juegos.css */
+:root{
+  --botones-hover: #ff8533;
+  --boton-compras-Bg-color:#ff6600;
+}
 
 .container-principal {
     display: flex;
-    width: 1200px;
+    width: 1300px;
     height: 1000px;
     gap: 2rem;
     padding: 2rem; 
@@ -58,8 +62,8 @@
   
   
   .juego-card {
-    width: 300px;
-    height: 360px;
+    width: 340px;
+    height: 380px;
     background-color: #2a2a2a;
     color: white;
     padding: 1rem;
@@ -69,7 +73,7 @@
     transition: transform 0.2s ease-in-out;
   }
   .juego-card img{
-    width: 200px;
+    width: 250px;
     height: 200px;
   }
   .juego-card:hover {
@@ -85,8 +89,33 @@
   }
   
   .container-filter-juegos li.active {
-    /* Por ejemplo, para resaltar el filtro activo */
     font-weight: bold;
-    color: #00aaff; /* O el color que prefieras */
+    color: #00aaff; 
   }
+
   
+
+  /* Estilos para los botones dentro de las tarjetas de juego*/
+  .juego-card-botones {
+    display: block;
+    width: 310px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    
+  }
+  .botonCarrito {
+    background-color: var(--boton-compras-Bg-color);
+    border: none;
+    color: rgb(250, 247, 247);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 8px;
+  }

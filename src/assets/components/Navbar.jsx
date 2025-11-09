@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import  { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useCart } from "../../assets/components/pages/Compras/CartContext";
 
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { getCartItemCount } = useCart();
 
   return (
     <nav>
@@ -40,7 +42,12 @@ export const Navbar = () => {
           <NavLink to="/">LOGIN</NavLink>
         </li>
         <li>
-        <NavLink to="/Carrito"><FontAwesomeIcon icon={faCartShopping} /></NavLink>
+        <NavLink to="/Carrito" className="cart-link">
+          <FontAwesomeIcon icon={faCartShopping} />
+          {getCartItemCount() > 0 && (
+            <span className="cart-item-count">{getCartItemCount()}</span>
+          )}
+        </NavLink>
         </li>
       </ul>
     </nav>

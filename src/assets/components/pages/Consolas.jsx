@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import "../styles/consola.css";
 import { Link } from 'react-router-dom';
 import { consolas } from '../../../Data/consolasData';
-
+import { useCart } from '../../components/pages/Compras/CartContext';
 
 export const Consolas = () => {
-    // Estado para la categoría seleccionada
+  const { addToCart } = useCart(); // 2. Obtén la función para agregar al carrito
+     // Estado para la categoría seleccionada
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
 
     // Obtenemos una lista de géneros únicos y añadimos "Todos" al principio
@@ -40,10 +41,19 @@ export const Consolas = () => {
           <div key={consola.id} className="consola-card">
               <img src={consola.imagen} alt={consola.nombre} />
               <h3>{consola.nombre}</h3>
-              <p>{consola.fabricante}</p>
-              <Link to={`/Consolas/${consola.id}`} className="botonVer">
-              Ir a la Consola
+              <div className='consolas-card-info'>
+              <p>Genero: {consola.fabricante}</p>
+              <p>Inventario: {consola.inventario}</p>
+              </div> 
+              <p>Precio: ${consola.precio}</p>
+            <div className='consolas-card-botones'>
+            <Link to={`/Consolas/${consola.id}`} className="botonVer">
+              Ver Consola
             </Link>
+            <button onClick={() => addToCart(consola)} className="botonCarrito">
+                Agregar al carrito
+                  </button>
+            </div>
           </div>
         ))}  
       </div> 

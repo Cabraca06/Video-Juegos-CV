@@ -11,6 +11,7 @@ import {Consolas} from './assets/components/pages/Consolas';
 import {Contact} from './assets/components/pages/Contact';
 import {ConsolaDetalle} from './assets/components/pages/Consolas/ConsolaDetalle';
 import {JuegoDetalle} from './assets/components/pages/Juegos/JuegoDetalle';
+import { Carrito } from './assets/components/pages/Compras/Carrito';
 
 
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/Consolas/:id" element={<ConsolaDetalle />} />
         <Route path="/juegos/:id" element={<JuegoDetalle />} /> 
         <Route path="/Contact" element={<Contact />} /> 
+        <Route path="/Carrito" element={<Carrito />} />
       </Routes>
     </div>
   )
