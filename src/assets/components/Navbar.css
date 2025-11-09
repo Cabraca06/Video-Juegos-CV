@@ -18,11 +18,12 @@ nav .title {
     text-decoration: none;
     color: rgb(17, 17, 17);
     padding: 10px;
-
-    background-color: #4CAF50;
-
-    background-color: #ecae32;
     border-radius: 10px;
+     background-image: url('../../../src/img/logo-cv.png');
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+
 }
 nav .title:hover{
     background-color: #838485;
@@ -103,3 +104,4 @@ nav .menu span {
         margin: 0.2rem 0.5rem;
     }
 }
+

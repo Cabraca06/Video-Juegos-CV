@@ -3,7 +3,7 @@
 .container-principal {
     display: flex;
     width: 1200px;
-    height: 800px;
+    height: 1000px;
     gap: 2rem;
     padding: 2rem; 
   }
@@ -43,15 +43,23 @@
     
   .container-juegos {
     flex: 1; 
-    height: 680px;
+    height: 700px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 3.8rem; 
+    gap: 5.8rem; 
   }
+  .juego-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 9px 0;
+    padding: 0 1rem; 
+  }
+  
   
   .juego-card {
     width: 300px;
-    height: 330px;
+    height: 360px;
     background-color: #2a2a2a;
     color: white;
     padding: 1rem;

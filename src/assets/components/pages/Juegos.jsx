@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import "../styles/Juegos.css";
 import { Link } from "react-router-dom";
-import { juegos } from '../../../data/juegosData';
+import { juegos } from '../../../Data/juegosData';
 export const Juegos = () => {
      // Estado para la categoría seleccionada
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
@@ -41,7 +41,10 @@ export const Juegos = () => {
             <div key={juego.id} className="juego-card">
                 <img src={juego.imagen} alt={juego.nombre} />
                 <h3>{juego.nombre}</h3>
-                <p>{juego.genero}</p>
+                <div className="juego-card-info">
+                  <p>Genero: {juego.genero}</p>
+                  <p>Inventario: {juego.inventario}</p>
+                </div>
                 <Link to={`/juegos/${juego.id}`} className="botonVer">
                 Ir al juego
               </Link>
