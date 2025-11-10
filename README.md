@@ -13,8 +13,8 @@ npm run build
 git add .
 
 # Guarda los cambios (commit):
-git commit -m
+git commit -m "nada"
 
 # Sube los cambios a la rama main
-git push origin main
+git push origin main 
 
