@@ -14,6 +14,7 @@ import {ConsolaDetalle} from './assets/components/pages/Consolas/ConsolaDetalle'
 import {JuegoDetalle} from './assets/components/pages/Juegos/JuegoDetalle';
 
 
+
 function App() {
   return (
       <div className='App'>

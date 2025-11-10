@@ -8,7 +8,7 @@ export const ConsolaDetalle = () => {
   const consola = consolas.find(j => j.id === parseInt(id));
 
   if (!consola) {
-    return <h2>Juego no encontrado</h2>;
+    return <h2>Consola no encontrada</h2>;
   }
 
   return (
@@ -19,7 +19,16 @@ export const ConsolaDetalle = () => {
            <h1>{consola.nombre}</h1>
            <h2>Fabricante: {consola.fabricante}</h2>
            <p>{consola.descripcion || 'No hay descripción disponible para este juego.'}</p>
-           <p>{consola.video}</p>
+           {consola.videoId && (
+            <div className="detalle-video-container">
+              <iframe
+                src={`https://www.youtube.com/embed/${consola.videoId}`}
+                title={consola.nombre}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
            <Link to="/Consolas" className="botonVer">
              Volver a Consolas
            </Link>
