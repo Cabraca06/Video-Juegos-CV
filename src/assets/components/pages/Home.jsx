@@ -21,7 +21,6 @@ export const Home = () => {
             videojuegos.
           </p>
         </section>
-
         <section className="Carrousel">
           <h2 className="textFondo">Juegos Destacados</h2>
           <div className="juegosDestacados">
