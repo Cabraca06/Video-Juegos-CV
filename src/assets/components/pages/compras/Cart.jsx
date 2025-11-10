@@ -1,9 +1,9 @@
 import React from 'react';
-import { useCart } from '../Compras/CartContext'; // Ajusta la ruta si es necesario
+import { useCart } from '../../../../context/CartContext'; // Ajusta la ruta si es necesario
 import '../../styles/Carrito.css'; 
 import { Link } from 'react-router-dom';
 
-export const Carrito = () => {
+export const Cart = () => {
     const { cartItems, addToCart, removeFromCart, clearCart } = useCart();
 
     const getTotalPrice = () => {

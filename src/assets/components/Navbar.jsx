@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import  { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { useCart } from "../../assets/components/pages/Compras/CartContext";
+import { useCart } from "../../context/CartContext";
 
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
@@ -42,7 +42,7 @@ export const Navbar = () => {
           <NavLink to="/">LOGIN</NavLink>
         </li>
         <li>
-        <NavLink to="/Carrito" className="cart-link">
+        <NavLink to="/Cart" className="cart-link">
           <FontAwesomeIcon icon={faCartShopping} />
           {getCartItemCount() > 0 && (
             <span className="cart-item-count">{getCartItemCount()}</span>
