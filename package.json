@@ -1,8 +1,8 @@
 {
   "name": "video-juegos-cv",
-  "homepage": "https://richardcabraca.github.io/Video-Juegos-CV/",
+  "homepage": "https://cabraca06.github.io/Video-Juegos-CV/",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.0", 
   "type": "module",
   "scripts": {
     "dev": "vite",
