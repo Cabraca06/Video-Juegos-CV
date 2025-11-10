@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import "../styles/Juegos.css";
 import { Link } from "react-router-dom";
 import { juegos } from '../../../Data/juegosData';
-import { useCart } from '../../components/pages/Compras/CartContext';
+import { useCart } from '../../../context/CartContext';
 export const Juegos = () => {
     const { addToCart } = useCart(); // 2. Obtén la función para agregar al carrito
      // Estado para la categoría seleccionada

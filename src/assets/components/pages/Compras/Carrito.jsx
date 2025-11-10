@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../Compras/CartContext'; // Ajusta la ruta si es necesario
+import { useCart } from '../../../../context/CartContext'; // Ajusta la ruta si es necesario
 import '../../styles/Carrito.css'; 
 import { Link } from 'react-router-dom';
 

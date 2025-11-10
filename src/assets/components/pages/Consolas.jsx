@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../styles/consola.css";
 import { Link } from 'react-router-dom';
 import { consolas } from '../../../Data/consolasData';
-import { useCart } from '../../components/pages/Compras/CartContext';
+import { useCart } from '../../../context/CartContext';
 
 export const Consolas = () => {
   const { addToCart } = useCart(); // 2. Obtén la función para agregar al carrito
