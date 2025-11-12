@@ -18,3 +18,7 @@ git commit -m "nada"
 # Sube los cambios a la rama main
 git push origin main 
 
+*   `homepage`: Le indica a `gh-pages` a qué URL se desplegará.
+*   `predeploy`: Este script se ejecuta automáticamente antes de `deploy`. Se asegura de que tu proyecto se construya (`npm run build`) con los últimos cambios.
+*   `deploy`: Este script toma la carpeta `dist` (que se genera con el build) y la publica en la rama `gh-pages` de tu repositorio.
+
