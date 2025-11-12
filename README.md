@@ -1,4 +1,4 @@
-# IICIO DEL PROYECTO
+# INICIO DEL PROYECTO
 
 # DESCRIPCION: 
 Es una tienda de video juegos, totalmente interactiva. 
