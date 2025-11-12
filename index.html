@@ -2,15 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./src/img/logo-cv.png" />
+    <!-- Add sizes attribute for better favicon handling -->
+    <link rel="icon" type="image/png" href="./src/img/logo-cv.png" sizes="32x32" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Redundant crossorigin can be removed from fonts.googleapis.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <!-- crossorigin is correct for fonts.gstatic.com as it serves the actual font files -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    
+    <!-- Explicitly add type="text/css" for clarity and strict validation -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" type="text/css">
+    
     <title>video-juegos-cv</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/main.jsx" defer></script>
+    <!-- Add defer attribute for explicit deferral, though type="module" implies it -->
+    <script type="module" src="./src/main.jsx" defer></script> 
   </body>
 </html>
