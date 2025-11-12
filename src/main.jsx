@@ -1,5 +1,5 @@
 import { HashRouter } from "react-router-dom";
-import CartProvider  from './context/CartContext';
+import { CartProvider } from './context/CartContext';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
