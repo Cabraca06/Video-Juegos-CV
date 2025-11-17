@@ -4,6 +4,7 @@ import ufcImg from '../img/UFC5.jpg';
 import granTurismoImg from '../img/Gran turismo.avif'; 
 import unchartedImg from '../img/Uncharted.jpg';
 import godOfWarImg from '../img/God of war.jpg'; 
+import fifa24Img from '../img/FC24.jpg';
 
 
 const juegos = [
@@ -18,6 +19,16 @@ const juegos = [
     {id: 5, nombre:'Uncharted', genero: 'Historia', imagen: unchartedImg, descripcion: 'Uncharted es una serie de videojuegos de acción-aventura. La serie sigue al cazafortunas Nathan Drake.', videoId: "FSbap_5yCjI", precio: 59.99 },
 
     {id: 6, nombre:'God of War', genero: 'Historia', imagen: godOfWarImg, descripcion: 'God of War es una serie de videojuegos de acción-aventura creada por David Jaffe en Santa Monica Studio de Sony.', videoId: "dIQGI36BxDE", precio: 69.99 },
+    
+    {id:7, nombre: 'FIFA 24', genero: 'Deportes', imagen: fifa24Img, descripcion: 'FIFA 24 es la última entrega de la popular serie de videojuegos de fútbol desarrollada por EA Sports.', videoId: "exampleVideoId7", precio: 59.99 },
+   
+    {id:8, nombre: 'The Last of Us Part II', genero: 'Aventura', imagen: 'https://example.com/lastofus2.jpg', descripcion: 'The Last of Us Part II es un videojuego de acción y aventura desarrollado por Naughty Dog y publicado por Sony Interactive Entertainment.', videoId: "exampleVideoId8", precio: 69.99 },
+    
+    {id:9, nombre: 'Resident Evil Village', genero: 'Horror', imagen: 'https://example.com/re8.jpg', descripcion: 'Resident Evil Village es un videojuego de survival horror desarrollado y publicado por Capcom.', videoId: "exampleVideoId9", precio: 59.99 },
+    
+    {id:10, nombre: 'Assassin\'s Creed Valhalla', genero: 'Aventura', imagen: 'https://example.com/acvalhalla.jpg', descripcion: 'Assassin\'s Creed Valhalla es un videojuego de acción y aventura desarrollado por Ubisoft Montreal y publicado por Ubisoft.', videoId: "exampleVideoId10", precio: 69.99 },
+    
+    {id:11, nombre: 'Cyberpunk 2077', genero: 'Ciencia Ficción', imagen: 'https://example.com/cyberpunk2077.jpg', descripcion: 'Cyberpunk 2077 es un videojuego de rol de acción desarrollado por CD Projekt Red.', videoId: "exampleVideoId11", precio: 59.99 },
 ];
 
 export default juegos;
