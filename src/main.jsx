@@ -9,7 +9,7 @@ import App from './App';
 //  colocar dentro del HashRouter cuando este lista para desplegar en github
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-     <HashRouter basename="/Video-Juegos-CV/" > 
+     <HashRouter > 
       <CartProvider>
       <App />
       </CartProvider>
