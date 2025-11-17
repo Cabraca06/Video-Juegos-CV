@@ -61,12 +61,17 @@
         justify-content: center;
         box-sizing: border-box;
         margin: 5px 0;
+
     }
     .About h2, .acerca h2 {
         font-size: 20px;
     }
     .About p, .acerca p {
-        font-size: 14px;
+        font-size: 18px;
+    }
+         .container-about{
+        flex-direction: column;
+        height: auto;
     }
 }
 
