@@ -1,6 +1,6 @@
 .logoHome{
     background-image: url(/src/img/fondo1.jpg);
-    width: 1430px;
+    width: 100%;
     height: 500px;
     background-size: cover;
     background-position: center;
@@ -17,11 +17,12 @@
 .textFondo{
     color: rgb(224, 217, 217);
     text-align: center;
-    padding-top: 40px;
-    font-size: 50px;
+    padding-top: 20px;
+    font-size: 40px;
     font-family: 'Arial', sans-serif;
     text-shadow: 2px 2px 4px #000000;
     height: 120px;
+    letter-spacing: 5px;
 }
 .textHom{
     color: rgb(12, 11, 11);
@@ -162,4 +163,24 @@
   width: 100%;
   height: 200px; 
   object-fit: cover;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card{
+        flex-direction: column;
+        width: 90%;
+    }
+    .imgJuego{
+        width: 100%;
+        height: 300px;
+        background-image: url(/src/img/W2K23.webp);
+    }
+    .textHom{
+        font-size: 30px;
+        width: 90%;
+        margin-left: 0;
+        text-align: center;
+    }
 }
