@@ -1,0 +1,138 @@
+:root {
+  --bgColor-filter-consolas:linear-gradient(45deg, #0a6ea0, #b8b9b6)
+}
+
+.container-principal-consolas {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  }
+  
+  .container-filter-consolas {
+    flex: 0 0 225px; 
+    background: linear-gradient(200deg, #2a2a2a, #8e8b8b);
+    text-align: center;
+    box-shadow: #6a6969 10px 10px;
+    border-radius: 10px ;
+    height: fit-content;
+  }
+  .container-filter-consolas h3{
+    color: #fafafa;
+    text-align: center;
+    text-shadow: 0px 2px rgb(171, 129, 40) ;
+    font-size: 25px;
+  }
+  .container-filter-consolas ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .container-filter-consolas li {
+    padding: 12px 20px;
+    background-color: #f2f1f1;
+    color: rgb(16, 16, 16);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: #1e1e1d 10px 10px 10px;
+  }
+
+    
+  .container-consolas {
+    flex: 1; 
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 1rem;
+    gap: 7rem; 
+    word-wrap: wrap;
+    justify-items: center;
+    align-items: start;
+    padding: 40px;
+  }
+  .consolas-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 9px 0;
+    padding: 0 1rem; 
+  }
+  
+  .consola-card {
+    width: 360px;
+    height: 380px;
+    background-color: #2a2a2a;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+  .consola-card img{
+    width: 250px;
+    height: 200px;
+  }
+  .consola-card:hover {
+    transform: scale(1.05); 
+  }
+  
+  .consola-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .container-filter-consolas li {
+    cursor: pointer;
+  }
+  
+  .container-filter-consolas li.active {
+    font-weight: bold;
+    color: #00aaff; 
+  }
+  
+
+  /*estilo de botones en consolas*/
+  .consolas-card-botones {
+    display: block;
+    width: 310px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    
+  }
+  .botonCarrito {
+    background-color: var(--boton-compras-Bg-color);
+    border: none;
+    color: rgb(250, 247, 247);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 8px;
+  }
+  .pagination-controls{
+    display: 'flex'; 
+    justify-content: 'center';
+     gap: '1rem';
+    margin-top: '20px' ;
+    width: '100%' ;
+    align-items: 'center';
+  }
+  .pagination-controls span{
+    color: 'black'; 
+    font-Weight: 'bold';
+  
+  }

@@ -1,0 +1,150 @@
+.carrito-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #2a2a2a; /* Fondo oscuro */
+    color: #f1f1f1; /* Texto claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.carrito-container h2, .carrito-container h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #00bfff; /* Azul neón */
+}
+
+.carrito-vacio {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.carrito-vacio p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.carrito-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.carrito-item:last-child {
+    border-bottom: none;
+}
+
+.carrito-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid #00bfff;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.item-info p {
+    margin: 0.25rem 0 0;
+    color: #aaa;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.item-actions button {
+    background-color: #00bfff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.item-actions button:hover {
+    background-color: #009acd;
+}
+
+.item-actions button:active {
+    transform: scale(0.95);
+}
+
+.item-actions span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.item-total {
+    min-width: 120px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.carrito-summary {
+    margin-top: 2rem;
+    text-align: right;
+    border-top: 1px solid #444;
+    padding-top: 1.5rem;
+}
+
+.carrito-summary h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.carrito-summary .boton-finalizar,
+.carrito-summary .boton-vaciar {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+}
+
+.carrito-summary .boton-finalizar {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.carrito-summary .boton-finalizar:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.carrito-summary .boton-vaciar {
+    background-color: transparent;
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.carrito-summary .boton-vaciar:hover {
+    background-color: #dc3545;
+    color: white;
+}
