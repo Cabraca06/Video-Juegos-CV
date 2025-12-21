@@ -1,0 +1,110 @@
+.section-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
+    background-image: url(/src/img/fond-login.jpg);
+    background-repeat: no-repeat;
+    background-size: contain-cover;
+    background-position: center;
+
+    
+}
+  .login-container {
+    background: rgba(0, 0, 0, 0.516);
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #f0ecec;
+    font-size: 1.8rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #efeded;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #f8fafd;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  .error-message {
+    color: #f8f4f4;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  
+  .login-btn,
+  .guest-btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    color: rgba(239, 237, 237, 0.994);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  
+  .login-btn:active,
+  .guest-btn:active {
+      transform: scale(0.98);
+  }
+  
+  .login-btn {
+    background-color: #1f1e1eec;
+    margin-top: 0.5rem;
+  }
+  
+  .login-btn:hover {
+    background-color: #571fb0de;
+    color: #fffefe;
+  }
+  
+  .guest-login {
+    margin-top: 1.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+  }
+  
+  .guest-login p {
+    color: #f4f1f1;
+    margin-bottom: 1rem;
+  }
+  
+  .guest-btn {
+    background-color: #eaa117;
+  }
+  
+  .guest-btn:hover {
+    background-color: #100f0f;
+  }
+  

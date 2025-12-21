@@ -1,0 +1,14 @@
+.Footer{
+    background-image: linear-gradient(to right top, #242524, #282928, #2b2d2b, #2f312f, #333533);
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #d8d8d9;
+    margin: 0 0 0 0;
+}
+.textFooter{
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 2px #000000;
+    
+}
