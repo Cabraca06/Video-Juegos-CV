@@ -9,7 +9,6 @@
   gap: 2rem;
   padding: 2rem;
   }
-  
   .container-filter-consolas {
     flex: 0 0 225px; 
     background: linear-gradient(200deg, #2a2a2a, #8e8b8b);
@@ -135,4 +134,20 @@
     color: 'black'; 
     font-Weight: 'bold';
   
+  }
+
+  @media (max-width: 768px) {
+    .container-principal-consolas {
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .container-filter-consolas {
+      width: 100%;
+      order: 0; 
+    }
+    .container-consolas {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem; 
+      order: 0; 
+    }
   }
