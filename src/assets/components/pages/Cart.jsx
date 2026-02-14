@@ -6,6 +6,7 @@ import '../styles/Carrito.css';
 const Cart = () => {
   const { cartItems, removeFromCart } = useCart();
 
+
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.precio * item.quantity, 0).toFixed(2);
   };

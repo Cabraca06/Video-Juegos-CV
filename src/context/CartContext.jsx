@@ -11,20 +11,21 @@ export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
 
     // Función para agregar un item al carrito (o incrementar su cantidad)
-    const addToCart = (itemToAdd) => {
-        setCartItems(prevItems => {
-            const itemInCart = prevItems.find(item => item.id === itemToAdd.id);
-            if (itemInCart) {
-                return prevItems.map(item =>
-                    item.id === itemToAdd.id
-                        ? { ...item, quantity: item.quantity + 1 }
-                        : item
-                );
-            }
-            // Si es la primera vez, lo agregamos con cantidad 1
-            return [...prevItems, { ...itemToAdd, quantity: 1 }];
+    const addToCart = (product) => {
+        setCartItems((prevItems) => {
+          // Buscamos si ya existe EXACTAMENTE ese producto
+          const itemExists = prevItems.find((item) => item.id === product.id);
+      
+          if (itemExists) {
+            return prevItems.map((item) =>
+              item.id === product.id 
+                ? { ...item, quantity: item.quantity + 1 } 
+                : item
+            );
+          }
+          return [...prevItems, { ...product, quantity: 1 }];
         });
-    };
+      };
 
     // Función para remover un item (o decrementar su cantidad)
     const removeFromCart = (itemId) => {

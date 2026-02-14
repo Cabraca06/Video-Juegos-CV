@@ -5,7 +5,7 @@ import {consolas} from '../../../../Data/consolasData';
 import '../../styles/ConsolaDetalle.css';
 export const ConsolaDetalle = () => {
   const { id } = useParams(); // Obtenemos el 'id' de la URL
-  const consola = consolas.find(j => j.id === parseInt(id));
+  const consola = consolas.find(c => c.id === parseInt(id));
 
   if (!consola) {
     return <h2>Consola no encontrada</h2>;

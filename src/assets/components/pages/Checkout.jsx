@@ -13,6 +13,8 @@ const Checkout = () => {
   const handlePaymentMethodChange = (e) => {
     setPaymentMethod(e.target.value);
   };
+  const { clearCart } = useCart();
+
 
   return (
     <div className="checkout">
