@@ -50,7 +50,7 @@ const Checkout = () => {
           <input type="text" id="codigoPostal" name="codigoPostal" required />
         </form>
       </div>
-      <p className="method-payment">Metodos de pago</p>
+      <p className="method-payment">Metodos de pago:</p>
       <div>
         <select
           className="select-payment"
