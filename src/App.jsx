@@ -17,6 +17,8 @@ import { Juegos } from './assets/components/pages/Juegos';
 import { Consolas } from './assets/components/pages/consolas';
 import { Contact } from './assets/components/pages/Contact';
 import { JuegoDetalle } from './assets/components/pages/Juegos/JuegoDetalle'; import { ConsolaDetalle } from './assets/components/pages/consolas/ConsolaDetalle';
+import Cart from './assets/components/pages/Cart';
+import Checkout from './assets/components/pages/Checkout';
 
 
 // Componente para proteger rutas y añadir el layout principal (Navbar)
@@ -56,6 +58,8 @@ function App() {
                     {<Route path="/consolas/:id" element={<ConsolaDetalle />} /> }
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/checkout" element={<Checkout />} />
                 </Route>
 
                 {/* Redirige cualquier ruta no encontrada a la página de inicio si está logueado, o al login si no */}
