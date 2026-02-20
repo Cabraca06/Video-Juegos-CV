@@ -12,17 +12,17 @@ import Cyberpunk2077Img from '../img/cyberp2077.png';
 
 
 const juegos = [
-    {id: 11, nombre: 'Call of Duty', genero: 'Guerra', imagen: callOfDutyImg, descripcion: 'Call of Duty: Black Ops Cold War es un videojuego de disparos en primera persona de 2020 desarrollado por Treyarch y Raven Software.', videoId: "SvNTIPZTulk", precio: 59.99 },
+    {id:11, nombre: 'Call of Duty', genero: 'Guerra', imagen: callOfDutyImg, descripcion: 'Call of Duty: Black Ops Cold War es un videojuego de disparos en primera persona de 2020 desarrollado por Treyarch y Raven Software.', videoId: "SvNTIPZTulk", precio: 59.99 },
 
-    {id: 12, nombre: 'Crash Bandicoot', genero: 'Aventura', imagen: crashImg, descripcion: 'Crash Bandicoot es una franquicia de videojuegos de plataformas. La serie fue creada por Andy Gavin y Jason Rubin durante su permanencia en Naughty Dog para Sony Computer Entertainment.', videoId: "o2b0PmF1bwg", precio: 49.99 }, 
+    {id:12, nombre: 'Crash Bandicoot', genero: 'Aventura', imagen: crashImg, descripcion: 'Crash Bandicoot es una franquicia de videojuegos de plataformas. La serie fue creada por Andy Gavin y Jason Rubin durante su permanencia en Naughty Dog para Sony Computer Entertainment.', videoId: "o2b0PmF1bwg", precio: 49.99 }, 
 
-    {id: 13, nombre: 'UFC', genero: 'Pelea', imagen: ufcImg, descripcion: 'EA Sports UFC 5 es un videojuego de artes marciales mixtas desarrollado por EA Vancouver y publicado por EA Sports.', videoId: "AkeoP2HQUdE", precio: 69.99 },
+    {id:13, nombre: 'UFC', genero: 'Pelea', imagen: ufcImg, descripcion: 'EA Sports UFC 5 es un videojuego de artes marciales mixtas desarrollado por EA Vancouver y publicado por EA Sports.', videoId: "AkeoP2HQUdE", precio: 69.99 },
 
-    {id: 14, nombre: 'Gran Turismo', genero: 'Carreras', imagen: granTurismoImg, descripcion: 'Gran Turismo es una serie de videojuegos de simulación de carreras producida por Polyphony Digital.', videoId: "1tBUsXIkG1A", precio: 79.99 },
+    {id:14, nombre: 'Gran Turismo', genero: 'Carreras', imagen: granTurismoImg, descripcion: 'Gran Turismo es una serie de videojuegos de simulación de carreras producida por Polyphony Digital.', videoId: "1tBUsXIkG1A", precio: 79.99 },
 
-    {id: 15, nombre:'Uncharted', genero: 'Historia', imagen: unchartedImg, descripcion: 'Uncharted es una serie de videojuegos de acción-aventura. La serie sigue al cazafortunas Nathan Drake.', videoId: "FSbap_5yCjI", precio: 59.99 },
+    {id:15, nombre:'Uncharted', genero: 'Historia', imagen: unchartedImg, descripcion: 'Uncharted es una serie de videojuegos de acción-aventura. La serie sigue al cazafortunas Nathan Drake.', videoId: "FSbap_5yCjI", precio: 59.99 },
 
-    {id: 16, nombre:'God of War', genero: 'Historia', imagen: godOfWarImg, descripcion: 'God of War es una serie de videojuegos de acción-aventura creada por David Jaffe en Santa Monica Studio de Sony.', videoId: "dIQGI36BxDE", precio: 69.99 },
+    {id:16, nombre:'God of War', genero: 'Historia', imagen: godOfWarImg, descripcion: 'God of War es una serie de videojuegos de acción-aventura creada por David Jaffe en Santa Monica Studio de Sony.', videoId: "dIQGI36BxDE", precio: 69.99 },
     
     {id:17, nombre: 'FIFA 24', genero: 'Deportes', imagen: fifa24Img, descripcion: 'FIFA 24 es la última entrega de la popular serie de videojuegos de fútbol desarrollada por EA Sports.', videoId: "exampleVideoId7", precio: 59.99 },
    

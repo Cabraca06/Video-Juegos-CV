@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {consolas} from '../../../../Data/consolasData';
 import '../../styles/ConsolaDetalle.css';
+
 export const ConsolaDetalle = () => {
   const { id } = useParams(); // Obtenemos el 'id' de la URL
   const consola = consolas.find(c => c.id === parseInt(id));
@@ -21,7 +22,7 @@ export const ConsolaDetalle = () => {
            <p>{consola.descripcion || 'No hay descripción disponible para este juego.'}</p>
            {consola.videoId && (
             <div className="detalle-video-container">
-              <iframe
+              <iframe className='detalle-video'
                 src={`https://www.youtube.com/embed/${consola.videoId}`}
                 title={consola.nombre}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

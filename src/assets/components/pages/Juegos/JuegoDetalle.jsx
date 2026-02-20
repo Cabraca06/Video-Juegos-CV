@@ -1,29 +1,26 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import '../../styles/JuegoDetalle.css';
-import  juegos  from '../../../../Data/juegosData';
+import  juego  from '../../../../Data/juegosData';
 
 export const JuegoDetalle = () => {
   const { id } = useParams(); // Obtenemos el 'id' de la URL
-  const juego = juegos.find(j => j.id === parseInt(id));
-
-  if (!juego) {
-    return <h2>Juego no encontrado</h2>;
-  }
+  const juegos = juego.find(c => c.id === parseInt(id));
+  
 
   return (
    <div className="container-det">
       <div className="detalle-container">
-         <img src={juego.imagen} alt={juego.nombre} className="detalle-img" />
+         <img src={juegos.imagen} alt={juego.nombre} className="detalle-img" />
          <div className="detalle-info">
-           <h1>{juego.nombre}</h1>
-           <h2>Género: {juego.genero}</h2>
-           <p>{juego.descripcion || 'No hay descripción disponible para este juego.'}</p>
-           {juego.videoId && (
+           <h1>{juegos.nombre}</h1>
+           <h2>Género: {juegos.genero}</h2>
+           <p>{juegos.descripcion || 'No hay descripción disponible para este juego.'}</p>
+           {juegos.videoId && (
             <div className="detalle-video-container">
               <iframe
-                src={`https://www.youtube.com/embed/${juego.videoId}`}
-                title={juego.nombre}
+                src={`https://www.youtube.com/embed/${juegos.videoId}`}
+                title={juegos.nombre}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>

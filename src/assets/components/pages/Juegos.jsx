@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/Juegos.css";
 // Asegúrate de que la ruta de importación de tus datos sea correcta
-import juegosData from '../../../Data/juegosData'; 
+import juegosData  from '../../../Data/juegosData'; 
 import { useCart } from '../../../context/CartContext';
 
 export const Juegos = () => {
@@ -15,24 +15,20 @@ export const Juegos = () => {
   const itemsPerPage = 6;
 
 
-  const juegosConIdUnico = juegosData.map(juego => ({
-      ...juego,
-      uniqueId: `juego-${juego.genero}-${juego.id}` 
-  }));
 
   // 2. Definición de categorías únicas
-  const categorias = ['Todos', ...new Set(juegosConIdUnico.map(juego => juego.genero))];
+  const categorias = ['Todos', ...new Set(juegosData.map(juego => juego.genero))];
 
   // Filtrado
   const juegosPorCategoria = categoriaSeleccionada === 'Todos'
-      ? juegosConIdUnico
-      : juegosConIdUnico.filter(juego => juego.genero === categoriaSeleccionada);
+      ? juegosData
+      : juegosData.filter(juego => juego.genero === categoriaSeleccionada);
 
   const juegosFiltrados = juegosPorCategoria.filter(juego =>
       juego.nombre.toLowerCase().includes(searchTerm.toLowerCase())
   );
   
-  // 4. Lógica de Paginación
+  
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = juegosFiltrados.slice(indexOfFirstItem, indexOfLastItem);
@@ -78,7 +74,7 @@ export const Juegos = () => {
         <div className='container-juegos'>
           {currentItems.length > 0 ? (
             currentItems.map(juego => (
-              <div key={juego.uniqueId} className="juego-card">
+              <div key={juego.id} className="juego-card">
                 <img src={juego.imagen} alt={juego.nombre} />
                 <h3>{juego.nombre}</h3>
                 <div className="juego-card-info">
@@ -87,7 +83,7 @@ export const Juegos = () => {
                 </div>
                 <p>Precio: ${juego.precio}</p>
                 <div className='juego-card-botones'>
-                  <Link to={`/juegos/${juego.uniqueId}`} className="botonVer">
+                  <Link to={`/juegos/${juego.id}`} className="botonVer">
                     Ir al juego
                   </Link>
                   <button onClick={() => addToCart(juego)} className="botonCarrito">

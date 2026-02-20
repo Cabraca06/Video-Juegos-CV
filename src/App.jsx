@@ -16,7 +16,8 @@ import { About } from './assets/components/pages/About';
 import { Juegos } from './assets/components/pages/Juegos';
 import { Consolas } from './assets/components/pages/consolas';
 import { Contact } from './assets/components/pages/Contact';
-import { JuegoDetalle } from './assets/components/pages/Juegos/JuegoDetalle'; import { ConsolaDetalle } from './assets/components/pages/consolas/ConsolaDetalle';
+import { JuegoDetalle } from './assets/components/pages/Juegos/JuegoDetalle'; 
+import { ConsolaDetalle } from './assets/components/pages/Consolas/ConsolaDetalle';
 import Cart from './assets/components/pages/Cart';
 import Checkout from './assets/components/pages/Checkout';
 

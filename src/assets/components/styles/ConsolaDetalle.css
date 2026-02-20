@@ -44,10 +44,16 @@
       margin-bottom: 30px;
     }
     
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
+      .container-det {
+        width: 100%;
+        padding: 0 20px;
+        
+      }
       .detalle-container {
-        flex-direction: row;
+        flex-direction: column;
         text-align: left;
+        width: 70%;
       }
     
       .detalle-info {
@@ -55,7 +61,11 @@
       }
     
       .detalle-img {
+        max-width: 100%;
+      }
+      .detalle-video{
         max-width: 40%;
+
       }
     }
     
