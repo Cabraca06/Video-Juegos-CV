@@ -31,10 +31,20 @@ export default function Login() {
     }
   };
 
+  if (username === 'admin' && password === 'admin') {
+    login({ name: 'Administrador' }); // Marca al usuario como autenticado (administrador)
+    navigate('/Admin'); // Redirige a la página de administración
+  }
+
   const handleGuestLogin = () => {
     login({ name: 'Invitado' }); // Marca al usuario como autenticado (invitado)
     navigate('/Home'); // Redirige a la página Home como invitado
   };
+
+  const handleAdminLogin = () => {
+    login({ name: 'Administrador' }); // Marca al usuario como autenticado (administrador)
+    navigate('/Admin'); // Redirige a la página de administración
+  }
 
   return (
     <div className='section-login'>
@@ -55,6 +65,9 @@ export default function Login() {
         <div className='guest-login'>
           <p>o</p>
           <button onClick={handleGuestLogin} className='guest-btn'>Entrar como invitado</button>
+        </div>
+        <div className='guest-admin'>
+          <button onClick={handleAdminLogin} className='guest-btn'>Igresar como Administrador</button>
         </div>
       
         <div className="social-icons" style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>

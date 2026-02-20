@@ -107,4 +107,9 @@
   .guest-btn:hover {
     background-color: #100f0f;
   }
+  .guest-admin{
+    margin-top: 10px;
+    padding-top: 1px;
+
+  }
   

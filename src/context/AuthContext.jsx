@@ -7,12 +7,14 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('isAuthenticated') === 'true');
   const [user, setUser] = useState(() => JSON.parse(sessionStorage.getItem('user')) || null);
 
+
   const login = (userData) => {
     sessionStorage.setItem('isAuthenticated', 'true'); // Guarda el estado en la sesión
     sessionStorage.setItem('user', JSON.stringify(userData));
     setIsAuthenticated(true);
     setUser(userData);
   };
+ 
 
   const logout = () => {
     sessionStorage.removeItem('isAuthenticated'); // Limpia el estado de la sesión

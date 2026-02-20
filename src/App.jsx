@@ -1,15 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
-
-// Context Providers
 import { CartProvider } from './context/CartContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
-
-// Asumo que tienes un componente Navbar y componentes para los detalles
-// Si los nombres o rutas son diferentes, ajústalos aquí.
 import { Navbar } from './assets/components/Navbar'; 
-
-// Page Components
 import Login from './assets/components/pages/Login';
 import { Home } from './assets/components/pages/Home';
 import { About } from './assets/components/pages/About';
@@ -20,6 +13,10 @@ import { JuegoDetalle } from './assets/components/pages/Juegos/JuegoDetalle';
 import { ConsolaDetalle } from './assets/components/pages/Consolas/ConsolaDetalle';
 import Cart from './assets/components/pages/Cart';
 import Checkout from './assets/components/pages/Checkout';
+import Admin from './assets/components/pages/Admin/admin';
+import Pedido from './assets/components/pages/Admin/pedido';
+import  NavAdmin  from './assets/components/pages/Admin/navAdmin/navAdmini';
+
 
 
 // Componente para proteger rutas y añadir el layout principal (Navbar)
@@ -39,6 +36,24 @@ const ProtectedLayout = () => {
         </>
     );
 };
+
+const AdminLayaout = () => {
+  const { isAuthenticated } = useAuth();
+
+  if (!isAuthenticated) {
+      return <Navigate to="/admin" />;
+  }
+
+  return (
+      <>
+           <NavAdmin />
+          <Outlet />
+         
+      </>
+  );
+};
+
+
 
 function App() {
   return (
@@ -63,7 +78,12 @@ function App() {
                     <Route path="/checkout" element={<Checkout />} />
                 </Route>
 
-                {/* Redirige cualquier ruta no encontrada a la página de inicio si está logueado, o al login si no */}
+                  {/* Rutas protegidas para el Admin */}
+                <Route element={<AdminLayaout />}>
+                    <Route path="/" element={<Navigate to="/admin" replace />} />
+                    <Route path="/admin"  exact={true}  element={<Admin />} /> 
+                    <Route path="/admin/pedido" element={<Pedido />} />
+                </Route>
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </Router>

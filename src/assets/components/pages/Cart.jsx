@@ -36,6 +36,12 @@ const Cart = () => {
       <Link to="/checkout" className="checkout-button">
         Realizar Pago
       </Link>
+      <Link to="/juegos" className="checkout-button">
+        Continuar Comprando
+      </Link>
+      <Link to="/pedido" className="checkout-button">
+        Realizar pedido
+      </Link>
     </div>
   );
 };
