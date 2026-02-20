@@ -28,7 +28,7 @@ export const Juegos = () => {
       juego.nombre.toLowerCase().includes(searchTerm.toLowerCase())
   );
   
-  
+  //logica paginación de juegos filtrados
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = juegosFiltrados.slice(indexOfFirstItem, indexOfLastItem);
