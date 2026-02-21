@@ -10,7 +10,7 @@ import  NavAdmin   from './navAdmin/navAdmini';
           
           
           <h3>Usuarios</h3>
-          <p>Administra los usuarios registrados en la plataforma. Puedes ver su información, gestionar roles (administrador, cliente) y tomar acciones como bloquear o eliminar cuentas si es necesario.</p>
+          <p>Administra los usuarios registrados en la plataforma. Puedes ver su información, gestionar roles (administrador, cliente) y tomar acciones como bloquear o eliminar cuentas si es necesario. hhhh</p>
 
           <h3>Reportes</h3>
           <p>Genera reportes sobre ventas, inventarios y comportamiento de los clientes. Analiza las tendencias de compra para tomar decisiones informadas sobre tu negocio.</p>
