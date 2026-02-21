@@ -17,34 +17,28 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!username || !password) {
-      setError('Por favor, ingresa tu usuario y contraseña.');
-      return;
-    }
-    // La contraseña debe ser igual al nombre de usuario
-    if (username === password) {
-      console.log('Login exitoso!');
-      login({ name: username }); // Marca al usuario como autenticado y guarda su nombre
-      navigate('/Home'); // Redirige a la página Home
-    } else {
-      setError('El usuario o la contraseña son incorrectos.');
-    }
   };
 
-  if (username === 'admin' && password === 'admin') {
-    login({ name: 'Administrador' }); // Marca al usuario como autenticado (administrador)
-    navigate('/Admin'); // Redirige a la página de administración
-  }
+  const handLoginClient = () => {
+    //Primera validacion para verificar que los campos no esten vacios, luego se verifica si el usuario es admin, si no es admin se verifica si el usuario y contraseña son iguales, si no se cumple ninguna de las condiciones anteriores se muestra un mensaje de error.
+    if (username === '' || password === '') {
+      setError('Por favor, introduce usuario y contraseña.');
+    } else if (username === 'admin' && password === 'admin') {
+      login({ name: 'Administrador' }); // Marca al usuario como autenticado (administrador)
+      navigate('/Admin'); // Redirige a la página de administración
+    } else if (username === password ) {
+      login({ name: username }); // Marca al usuario como autenticado (administrador)
+      navigate('/Home'); // Redirige a la página de administración
+    } else {
+      setError('Usuario o contraseña incorrectos.');
+    }
+  } 
 
   const handleGuestLogin = () => {
     login({ name: 'Invitado' }); // Marca al usuario como autenticado (invitado)
     navigate('/Home'); // Redirige a la página Home como invitado
   };
 
-  const handleAdminLogin = () => {
-    login({ name: 'Administrador' }); // Marca al usuario como autenticado (administrador)
-    navigate('/Admin'); // Redirige a la página de administración
-  }
 
   return (
     <div className='section-login'>
@@ -60,14 +54,11 @@ export default function Login() {
             <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='La contraseña es tu mismo usuario' />
           </div>
           {error && <p className='error-message'>{error}</p>}
-          <button type='submit' className='login-btn'>Acceder</button>
+          <button onClick={handLoginClient} type='submit' className='login-btn'>Acceder</button>
         </form>
         <div className='guest-login'>
           <p>o</p>
           <button onClick={handleGuestLogin} className='guest-btn'>Entrar como invitado</button>
-        </div>
-        <div className='guest-admin'>
-          <button onClick={handleAdminLogin} className='guest-btn'>Igresar como Administrador</button>
         </div>
       
         <div className="social-icons" style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>
