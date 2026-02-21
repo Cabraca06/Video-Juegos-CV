@@ -21,9 +21,9 @@ const Pedido = () => {
           <img src={item.imagen} alt={item.nombre} />
           <div>
             <h3>{item.nombre}</h3>
-            <p>Cantidad: {item.quantity}</p>
-            <p>Precio unitario: ${item.precio}</p>
-            <p>Subtotal: ${item.precio * item.quantity}</p>
+            <p>Cantidad : {item.quantity}</p>
+            <p>Precio unitario : ${item.precio}</p>
+            <p>Subtotal : ${item.precio * item.quantity}</p>
           </div>
         </div>
       ))}
