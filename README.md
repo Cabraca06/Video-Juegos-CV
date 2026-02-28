@@ -1,7 +1,19 @@
 # INICIO DEL PROYECTO
 
 # DESCRIPCION: 
-Es una tienda de video juegos, totalmente interactiva. 
+Es una tienda de video juegos, lo cual se podrá ver la descripción y comprar cada uno de los juegos y consolas, ellos cuentam conninventario el cual se disminuirá por cada compra. 
+ .El navbar de login para clientes es: 
+      -Home
+      -About
+      -Juegos
+      -Consolas
+      -Contacto
+#User 
+  -Login:
+    -Cliente: El cliente se puede loguear utilizando el mismo usuario de contraseña.
+    -Invitado: Los clientes pueden ingresar como invitados sin contraseña
+    -Administrador: En adimnistrador solo las personas autorizadas tienen acceso, lo cual pueden hacer vaierdad de acciones como revisar y alistar pedidos y verificacion de pagos realizados o pendiente.
+
 
 # Pagina de HOME
 - Contiene una portada

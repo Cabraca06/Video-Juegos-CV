@@ -73,4 +73,14 @@
       font-size: 1.1em;
       color: #777;
   }
+
   
+
+  /*Confirmar pago CSS*/
+.container-pago{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}

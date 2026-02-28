@@ -140,5 +140,18 @@ nav .menu span {
   
 /*fin estilos del carrito de compras*/
 
-
+/*Cerrar sesion*/
+.logout-btn{
+    background-color: #eaa717;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.logout-btn:hover{
+    background-color: #b50f0f;
+    color: #fff;
+}
 

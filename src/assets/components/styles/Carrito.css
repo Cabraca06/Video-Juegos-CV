@@ -158,6 +158,8 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+
   }
   
   .cart h2 {
@@ -166,11 +168,10 @@
     color: #333;
   }
   
-  .cart-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+  .cart-item div, .cart-item img{
+    display: grid;
+    grid-template-columns: repeat( 2, 3fr);
+    width: 400px;
   }
   
   .cart-item:last-child {
@@ -244,5 +245,33 @@
     font-size: 50PX;
     box-shadow: #b67d0c 0px 10px 20px;
     
+  }
+
+
+
+  /* estilos para solicitud de pedido */
+  .form-pedido {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-pedido label {
+      font-weight: bold;
+      color: #333;
+  }
+
+  .form-pedido input,
+  #form-pedido textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
   }
 

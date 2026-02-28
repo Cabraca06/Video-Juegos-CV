@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/checkout.css";
 import { useCart } from "../../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("tarjetaCredito");
   const { cartItems, removeFromCart } = useCart();
+  const nombreRef = useRef(null);
+  const emailRef = useRef(null);
+  const direccionRef = useRef(null);
+  const ciudadRef = useRef(null);
+  const codigoPostalRef = useRef(null);
+
   const calculateTotal = () => {
     return cartItems
       .reduce((total, item) => total + item.precio * item.quantity, 0)
@@ -13,8 +20,61 @@ const Checkout = () => {
   const handlePaymentMethodChange = (e) => {
     setPaymentMethod(e.target.value);
   };
-  const { clearCart } = useCart();
+  const navigate = useNavigate();
+  
+  const clearCart = () => {
+    cartItems.length = 0;
+  };
 
+
+  //funcion de pagar que valida los campos de informacion de envio y pago, limpia el carrito y redirige a la pagina de confirmacion de pago
+  const pagar = () => { 
+    if (paymentMethod === "tarjetaCredito") {
+      const cardNumber = document.getElementById("cardNumber").value;
+        const expiryDate = document.getElementById("expiryDate").value;
+        const cvv = document.getElementById("cvv").value;
+        const nombre = nombreRef.current.value;
+        const email = emailRef.current.value;
+        const direccion = direccionRef.current.value;
+        if (!nombre || !email || !direccion || !cardNumber || !expiryDate || !cvv) {  
+            alert("Por favor, complete todos los campos de información de envío y pago.");
+            return;
+        }
+        setPaymentMethod(true);
+        clearCart();
+         navigate("/confirmPago"); 
+      } else if (paymentMethod === "paypal") {
+        window.location.href = "https://www.paypal.com";
+      }
+      if (paymentMethod === "transferencia") {
+        const nombre = nombreRef.current.value;
+        const email = emailRef.current.value;
+        const direccion = direccionRef.current.value;
+        if (!nombre || !email || !direccion) {
+            alert("Por favor, complete todos los campos de información de envío.");
+            return;
+        }
+        setPaymentMethod(true);
+    
+    }
+
+  };
+
+
+  // Función para volver al carrito sin limpiar los productos
+  const volverCarrito = () => {
+    if (window.confirm("¿Estás seguro de que deseas volver al carrito?")) {
+      navigate("/cart");
+    }
+  };
+
+  // Función para eliminar el carrito y redirigir al usuario al carrito vacío
+  const eliminarCarrito = () => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar el carrito?")) {
+      cartItems.length = 0;
+      navigate("/cart");
+    }
+  };
 
   return (
     <div className="checkout">
@@ -35,19 +95,19 @@ const Checkout = () => {
           <label htmlFor="nombre" className="nombre">
             Nombre:
           </label>
-          <input type="text" id="nombre" name="nombre" required />
+          <input type="text" id="nombre" name="nombre" required ref={nombreRef} />
           <label htmlFor="email" className="mail">
             Email:
           </label>
-          <input type="text" id="email" name="email" required />
+          <input type="text" id="email" name="email" required ref={emailRef}/>
           <label htmlFor="direccion" className="direccion">
             Dirección:
           </label>
-          <input type="text" id="direccion" name="direccion" required />
+          <input type="text" id="direccion" name="direccion" required ref={direccionRef} />
           <label htmlFor="ciudad">Ciudad:</label>
-          <input type="text" id="ciudad" name="ciudad" required />
+          <input type="text" id="ciudad" name="ciudad" required  ref={ciudadRef}/>
           <label htmlFor="codigoPostal">Código Postal:</label>
-          <input type="text" id="codigoPostal" name="codigoPostal" required />
+          <input type="text" id="codigoPostal" name="codigoPostal" required ref={codigoPostalRef} />
         </form>
       </div>
       <p className="method-payment">Metodos de pago:</p>
@@ -102,10 +162,18 @@ const Checkout = () => {
       )}
       <div className="cart-total">Total: ${calculateTotal()}</div>
       <button
-        className="confirm-payment"
+        className="Buttons"
         type="submit"
-        onClick={() => setPaymentMethod(true)}>
+        onClick={() => pagar(true)}
+      >
         Confirmar Pago
+      </button>
+      <button className="Buttons" type="submit" onClick={volverCarrito}>      
+        Volver al carrito
+      </button>
+      <button className="Buttons" type="submit" onClick={eliminarCarrito}>
+        {" "}
+        Eliminar carrito{" "}
       </button>
       {paymentMethod === true && <p>Pago confirmado. Gracias por tu compra!</p>}
       {paymentMethod === true &&

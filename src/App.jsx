@@ -16,6 +16,7 @@ import Checkout from './assets/components/pages/Checkout';
 import Admin from './assets/components/pages/Admin/admin';
 import Pedido from './assets/components/pages/Admin/pedido';
 import  NavAdmin  from './assets/components/pages/Admin/navAdmin/navAdmini';
+import ConfirmPago from './context/ConfirmPago';
 
 
 
@@ -84,6 +85,10 @@ function App() {
                     <Route path="/admin"  exact={true}  element={<Admin />} /> 
                     <Route path="/admin/pedido" element={<Pedido />} />
                 </Route>
+                
+                 {/* Ruta para confirmar el pago */}
+                <Route path="/confirmPago" element={<ConfirmPago />} />
+
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </Router>
