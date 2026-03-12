@@ -27,6 +27,8 @@ const Cart = () => {
     clearCart();
   }
 
+  //Funcion de formulario de pedido
+
 
   return (
     <div className="cart">
@@ -81,7 +83,9 @@ const Cart = () => {
       </Link>
       <button className="checkout-button" onClick={realizarPedido}>Realizar Pedido</button>
     </div>
+    
   );
+  
 };
 
 export default Cart;
