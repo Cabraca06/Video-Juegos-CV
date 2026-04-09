@@ -14,7 +14,7 @@ import { ConsolaDetalle } from './assets/components/pages/Consolas/ConsolaDetall
 import Cart from './assets/components/pages/Cart';
 import Checkout from './assets/components/pages/Checkout';
 import Admin from './assets/components/pages/Admin/admin';
-import Pedido from './assets/components/pages/Admin/pedido';
+import  Pedido from './assets/components/pages/Admin/pedido';
 import  NavAdmin  from './assets/components/pages/Admin/navAdmin/navAdmini';
 import ConfirmPago from './context/ConfirmPago';
 
@@ -65,7 +65,6 @@ function App() {
                 {/* Ruta pública para el Login */}
                 <Route path="/login" element={<Login />} />
                 
-                {/* Rutas protegidas que usarán el ProtectedLayout */}
                 <Route element={<ProtectedLayout />}>
                     <Route path="/" element={<Navigate to="/home" replace />} />
                     <Route path="/home" element={<Home />} />
