@@ -29,12 +29,24 @@ Es una tienda de video juegos, lo cual se podrá ver la descripción y comprar c
 # Pagina de juegos
 - Contiene todos los juegos(un filtro), se pueden seleccionar por categorias.
 - Cuenta con una carta cada juegos, los cuales cada carta, Contiene:
-                                                                - Genero ------|> - Ir al juego: Boton para trasladar a ver la infromacion del juego que quiere comprar
-                                                                - Inventario---|
-                                                                - Precio-------|> - Agregar al carrito: Botón para agregar al carrito de compras el juego que quiera.
-                                                                - Nombre-------!
+                                                                - Genero -------|> - Ir al juego: Boton para trasladar a ver la Información del juego que quiere comprar
+                                                                - Inventario----|>
+                                                                - Precio--------|> - Agregar al carrito: Botón para agregar al carrito de compras el juego que quiera.
+                                                                - Nombre--------|>
+                                                                - ir al juego---|>
+                                                                - Agregar al carrito----|>
+                                                                - Imagen -------|>
+                               
+
 
   
+
+
+
+
+
+
+
 
 
 
@@ -65,3 +77,4 @@ npm run deploy
 *   `predeploy`: Este script se ejecuta automáticamente antes de `deploy`. Se asegura de que tu proyecto se construya (`npm run build`) con los últimos cambios.
 *   `deploy`: Este script toma la carpeta `d` (que se genera con el build) y la publica en la rama `gh-pages` de tu repositorio.
 
+# SQL contraseña es: cabraca06
