@@ -18,18 +18,15 @@ const Cart = () => {
   const realizarPedido = () => {
     //Rellenar informacion de contacto y validar datos antes de realizar el pedido
   if (document.getElementById('nombre').value === '' || document.getElementById('email').value === '' || document.getElementById('direccion').value === '' || document.getElementById('MetodoPago').value === '') {
-      alert('Por favor, complete toda la información de contacto');
-      //no redireccionar nada sin antes rellenar los campos de contacto
-      useNavigate('/cart')
-      return;
-    }
-    alert('Pedido realizado con éxito');
-    clearCart();
+    alert('Por favor, complete toda la información de contacto');
+    return;
   }
+  alert('Pedido realizado con éxito');
+  //Limpiar el carrito después de realizar el pedido
+  clearCart();
+}
 
   //Funcion de formulario de pedido
-
-
   return (
     <div className="cart">
       <h2>Carrito de Compras</h2>
