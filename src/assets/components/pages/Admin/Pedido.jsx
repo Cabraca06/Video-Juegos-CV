@@ -2,6 +2,7 @@ import React from 'react';
 import { useCart } from '../../../../context/CartContext';
 import '../Admin/style/Pedido.css';
 
+
 const Pedido = () => {
   const { cartItems } = useCart();
 
