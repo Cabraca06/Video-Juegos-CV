@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/Juegos.css";
-// Asegúrate de que la ruta de importación de tus datos sea correcta
-import juegosData  from '../../../Data/juegosData'; 
 import { useCart } from '../../../context/CartContext';
+import { useOrders } from '../../../context/OrderContext';
+
 
 export const Juegos = () => {
   const { addToCart } = useCart();
+  const { inventory } = useOrders();
   
   // Estados declarados
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
@@ -14,15 +15,17 @@ export const Juegos = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-
+  // Filtramos el inventario global para obtener solo los artículos que son juegos
+  // (asumiendo que los juegos tienen la propiedad 'genero')
+  const juegos = inventory.filter(item => item.genero);
 
   // 2. Definición de categorías únicas
-  const categorias = ['Todos', ...new Set(juegosData.map(juego => juego.genero))];
+  const categorias = ['Todos', ...new Set(juegos.map(juego => juego.genero))];
 
   // Filtrado
   const juegosPorCategoria = categoriaSeleccionada === 'Todos'
-      ? juegosData
-      : juegosData.filter(juego => juego.genero === categoriaSeleccionada);
+      ? juegos
+      : juegos.filter(juego => juego.genero === categoriaSeleccionada);
 
   const juegosFiltrados = juegosPorCategoria.filter(juego =>
       juego.nombre.toLowerCase().includes(searchTerm.toLowerCase())

@@ -10,11 +10,14 @@
 
 .nav-admin {
     display: flex;
-    justify-content: stretch;
+    justify-content: space-between;
+    align-items: center;
     background-image: linear-gradient(to right top, #141414, #0b0b0b, #2b2d2b, #161616, #333533);
     position: sticky;
     top: 0;
-    height: 80px;
+    min-height: 80px;
+    padding: 0 20px;
+    z-index: 1000;
 }
 
 nav .title {
@@ -63,13 +66,11 @@ nav ul li a:not(.active):hover {
 
 nav .menu {
     display: none;
-    position: absolute;
-    top: 0.75rem;
-    right: 0.5rem;
     flex-direction: column;
     justify-content: space-between;
     width: 2.25rem;
     height: 2rem;
+    cursor: pointer;
 }
 
 nav .menu span {
@@ -81,13 +82,18 @@ nav .menu span {
 
 /* Resposive navbar */
 @media (max-width: 750px) {
+    .nav-admin {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     nav .menu {
         display: flex;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
+    .nav-welcome {
+        margin-bottom: 0;
+        font-size: 20px;
     }
 
     nav ul {
@@ -139,6 +145,3 @@ nav .menu span {
   }
   
 /*fin estilos del carrito de compras*/
-
-
-

@@ -20,18 +20,34 @@ export default function Login() {
   };
 
   const handLoginClient = () => {
-    //Primera validacion para verificar que los campos no esten vacios, luego se verifica si el usuario es admin, si no es admin se verifica si el usuario y contraseña son iguales, si no se cumple ninguna de las condiciones anteriores se muestra un mensaje de error.
     if (username === '' || password === '') {
       setError('Por favor, introduce usuario y contraseña.');
-    } else if (username === 'admin' && password === 'admin') {
-      login({ name: 'Administrador' }); // Marca al usuario como autenticado (administrador)
-      navigate('/Admin'); // Redirige a la página de administración
-    } else if (username === password ) {
-      login({ name: username }); // Marca al usuario como autenticado (administrador)
-      navigate('/Home'); // Redirige a la página de administración
+      return;
+    }
+
+    let targetPath = '';
+    let userPayload = null;
+
+    if (username === 'admin' && password === 'admin') {
+      targetPath = '/Admin';
+      userPayload = { name: 'Administrador', username: 'admin' };
+    } else if (username === password) {
+      targetPath = '/Home';
+      userPayload = { name: username, username: username };
     } else {
       setError('Usuario o contraseña incorrectos.');
+      return;
     }
+
+    // Lógica para persistir al usuario en la lista de usuarios registrados
+    const storedUsers = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
+    if (!storedUsers.some(u => u.username === username)) {
+      storedUsers.push({ username, password });
+      localStorage.setItem('usuariosRegistrados', JSON.stringify(storedUsers));
+    }
+
+    login(userPayload);
+    navigate(targetPath);
   } 
 
   const handleGuestLogin = () => {

@@ -2,10 +2,12 @@ import React, { useState, useRef } from "react";
 import "../styles/checkout.css";
 import { useCart } from "../../../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import { useOrders } from "../../../context/OrderContext";
 
 const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("tarjetaCredito");
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart, clearCart } = useCart();
+  const { processOrder } = useOrders();
   const nombreRef = useRef(null);
   const emailRef = useRef(null);
   const direccionRef = useRef(null);
@@ -14,7 +16,7 @@ const Checkout = () => {
 
   const calculateTotal = () => {
     return cartItems
-      .reduce((total, item) => total + item.precio * item.quantity, 0)
+      .reduce((total, item) => total + (item.precio || 0) * (item.quantity || 0), 0)
       .toFixed(2);
   };
   const handlePaymentMethodChange = (e) => {
@@ -22,10 +24,6 @@ const Checkout = () => {
   };
   const navigate = useNavigate();
   
-  const clearCart = () => {
-    cartItems.length = 0;
-  };
-
 
   //funcion de pagar que valida los campos de informacion de envio y pago, limpia el carrito y redirige a la pagina de confirmacion de pago
   const pagar = () => { 
@@ -40,7 +38,15 @@ const Checkout = () => {
             alert("Por favor, complete todos los campos de información de envío y pago.");
             return;
         }
-        setPaymentMethod(true);
+
+        processOrder(
+          { nombre, email, direccion },
+          cartItems,
+          calculateTotal(),
+          "Tarjeta de Crédito",
+          "Pagado"
+        );
+
         clearCart();
          navigate("/confirmPago"); 
       } else if (paymentMethod === "paypal") {
@@ -54,7 +60,18 @@ const Checkout = () => {
             alert("Por favor, complete todos los campos de información de envío.");
             return;
         }
-        setPaymentMethod(true);
+
+        processOrder(
+          { nombre, email, direccion },
+          cartItems,
+          calculateTotal(),
+          "Transferencia Bancaria",
+          "Pendiente"
+        );
+
+        alert("Pedido por transferencia registrado.");
+        clearCart();
+        navigate("/confirmPago");
     
     }
 
@@ -71,7 +88,7 @@ const Checkout = () => {
   // Función para eliminar el carrito y redirigir al usuario al carrito vacío
   const eliminarCarrito = () => {
     if (window.confirm("¿Estás seguro de que deseas eliminar el carrito?")) {
-      cartItems.length = 0;
+      clearCart();
       navigate("/cart");
     }
   };
@@ -163,21 +180,16 @@ const Checkout = () => {
       <div className="cart-total">Total: ${calculateTotal()}</div>
       <button
         className="Buttons"
-        type="submit"
-        onClick={() => pagar(true)}
+        onClick={pagar}
       >
         Confirmar Pago
       </button>
-      <button className="Buttons" type="submit" onClick={volverCarrito}>      
+      <button className="Buttons" onClick={volverCarrito}>      
         Volver al carrito
       </button>
-      <button className="Buttons" type="submit" onClick={eliminarCarrito}>
-        {" "}
-        Eliminar carrito{" "}
+      <button className="Buttons" onClick={eliminarCarrito}>
+        Eliminar carrito
       </button>
-      {paymentMethod === true && <p>Pago confirmado. Gracias por tu compra!</p>}
-      {paymentMethod === true &&
-        cartItems.map((item) => removeFromCart(item.id))}
     </div>
   );
 };
