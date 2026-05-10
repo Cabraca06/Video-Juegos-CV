@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import "../styles/consola.css";
 import { Link } from 'react-router-dom';
-import { consolas } from '../../../Data/consolasData';
 import { useCart } from '../../../context/CartContext';
+import { useOrders } from '../../../context/OrderContext';
 
 export const Consolas = () => {
   const { addToCart } = useCart(); // 2. Obtén la función para agregar al carrito
+  const { inventory } = useOrders();
+
+  // Filtramos las consolas del inventario global (aquellas que tienen fabricante)
+  const consolas = inventory.filter(item => item.fabricante);
+
      // Estado para la categoría seleccionada
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
     const [searchTerm, setSearchTerm] = useState('');
@@ -100,4 +105,3 @@ export const Consolas = () => {
     </div>
   );
 }
-

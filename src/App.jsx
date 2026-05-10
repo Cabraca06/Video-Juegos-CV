@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Navbar } from './assets/components/Navbar'; 
@@ -14,9 +14,11 @@ import { ConsolaDetalle } from './assets/components/pages/Consolas/ConsolaDetall
 import Cart from './assets/components/pages/Cart';
 import Checkout from './assets/components/pages/Checkout';
 import Admin from './assets/components/pages/Admin/admin';
-import  Pedido from './assets/components/pages/Admin/pedido';
-import  NavAdmin  from './assets/components/pages/Admin/navAdmin/navAdmini';
+import Pedido from './assets/components/pages/Admin/Pedido';
+import Inventario from './assets/components/pages/Admin/Inventario';
+import NavAdmin  from './assets/components/pages/Admin/navAdmin/navAdmini';
 import ConfirmPago from './context/ConfirmPago';
+import { OrderProvider } from './context/OrderContext';
 
 
 
@@ -38,11 +40,11 @@ const ProtectedLayout = () => {
     );
 };
 
-const AdminLayaout = () => {
+const AdminLayout = () => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-      return <Navigate to="/admin" />;
+      return <Navigate to="/login" />;
   }
 
   return (
@@ -59,6 +61,7 @@ const AdminLayaout = () => {
 function App() {
   return (
     <AuthProvider>
+      <OrderProvider>
       <CartProvider>
         <Router>
             <Routes>
@@ -79,10 +82,11 @@ function App() {
                 </Route>
 
                   {/* Rutas protegidas para el Admin */}
-                <Route element={<AdminLayaout />}>
+                <Route element={<AdminLayout />}>
                     <Route path="/" element={<Navigate to="/admin" replace />} />
                     <Route path="/admin"  exact={true}  element={<Admin />} /> 
                     <Route path="/admin/pedido" element={<Pedido />} />
+                    <Route path="/admin/inventario" element={<Inventario />} />
                 </Route>
                 
                  {/* Ruta para confirmar el pago */}
@@ -92,6 +96,7 @@ function App() {
             </Routes>
         </Router>
       </CartProvider>
+      </OrderProvider>
     </AuthProvider>
   );
 }

@@ -1,30 +1,32 @@
 import React, { createContext, useState, useContext } from 'react';
 
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  // Revisa sessionStorage para mantener el estado de autenticación si se recarga la página
-  const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('isAuthenticated') === 'true');
-  const [user, setUser] = useState(() => JSON.parse(sessionStorage.getItem('user')) || null);
+  // Inicializamos el estado leyendo desde localStorage para persistir la sesión al recargar
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return localStorage.getItem('user') !== null;
+  });
 
   const login = (userData) => {
-    sessionStorage.setItem('isAuthenticated', 'true'); // Guarda el estado en la sesión
-    sessionStorage.setItem('user', JSON.stringify(userData));
-    setIsAuthenticated(true);
     setUser(userData);
+    setIsAuthenticated(true);
+    localStorage.setItem('user', JSON.stringify(userData));
   };
- 
 
   const logout = () => {
-    sessionStorage.removeItem('isAuthenticated'); // Limpia el estado de la sesión
-    sessionStorage.removeItem('user');
-    setIsAuthenticated(false);
     setUser(null);
+    setIsAuthenticated(false);
+    localStorage.removeItem('user');
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
