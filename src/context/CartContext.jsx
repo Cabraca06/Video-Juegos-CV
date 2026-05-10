@@ -13,7 +13,7 @@ export const CartProvider = ({ children }) => {
     // Función para agregar un item al carrito (o incrementar su cantidad)
     const addToCart = (product) => {
         setCartItems((prevItems) => {
-          // Buscamos si ya existe EXACTAMENTE ese producto
+          // Buscamos si ya existe EXACTAMENTE ese productsos en el carrito (comparando por ID)
           const itemExists = prevItems.find((item) => item.id === product.id);
       
           if (itemExists) {
